@@ -1,0 +1,23 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(100, 100, 100);
+}
+
+.cli {
+    background-color: black;
+    width: 70%;
+    height: 500px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+    font-size: 12pt;
+}
+
+.cli.retro {
+    font-family: 'Press Start 2P';
+    color: yellowgreen;
+}

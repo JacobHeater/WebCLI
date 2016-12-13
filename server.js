@@ -2,19 +2,24 @@
 
     'use strict';
 
-    var express = require("express");
+    var express = require('express');
     var app = express();
-    var exec = require("child_process").exec;
-    var async = require("async");
+    var exec = require('child_process').exec;
+    var async = require('async');
 
     var v1Router = express.Router();
 
-    v1Router.post("/shell", (req, res, next) => {
-        var json = "";
+    var staticPaths = [
+        '/scripts',
+        '/styles'
+    ];
 
-        req.on("data", data => json += data);
+    v1Router.post('/shell', (req, res, next) => {
+        var json = '';
 
-        req.on("end", () => {
+        req.on('data', data => json += data);
+
+        req.on('end', () => {
             if (json) {
                 var data = JSON.parse(json);
                 var commands = data.commands;
@@ -44,10 +49,13 @@
         });
     });
 
-    app.use("/api/v1", v1Router);
+    app.use('/api/v1', v1Router);
 
-    app.get("/", (req, res) => res.sendFile(`${__dirname}/index.html`));
+    //Make these directories static so that their files can be served.
+    staticPaths.map(p => app.use(p, express.static(__dirname.concat(p))));
 
-    app.listen("1234", () => console.log("Listening on port 1234"));
+    app.get('/', (req, res) => res.sendFile(`${__dirname}/index.html`));
+
+    app.listen('1234', () => console.log('Listening on port 1234'));
 
 })();
