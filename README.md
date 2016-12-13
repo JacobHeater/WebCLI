@@ -1,5 +1,7 @@
 # WebCLI
 
+https://nodeshell.herokuapp.com
+
 This app is a proof of concept, and is not intended to be used in actual development
 environments. 
 
