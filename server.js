@@ -14,6 +14,8 @@
         '/styles'
     ];
 
+    var port = process.env.PORT || 1234;
+
     v1Router.post('/shell', (req, res, next) => {
         var json = '';
 
@@ -56,6 +58,8 @@
 
     app.get('/', (req, res) => res.sendFile(`${__dirname}/index.html`));
 
-    app.listen('1234', () => console.log('Listening on port 1234'));
+    app.listen(port, function() {
+        console.log(`Listening on port ${port}.`);
+    });
 
 })();
