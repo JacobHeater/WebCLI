@@ -1,0 +1,16 @@
+{
+  "name": "shell-util",
+  "version": "1.0.0",
+  "description": "A REST API that allows sending shell commands to the host.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jacob Heater",
+  "license": "MIT",
+  "devDependencies": {
+    "async": "^2.1.4",
+    "express": "^4.14.0"
+  }
+}
