@@ -7,9 +7,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobHeater/WebCLI.git"
+  },
   "author": "Jacob Heater",
   "license": "MIT",
   "devDependencies": {
+    "async": "^2.1.4",
+    "express": "^4.14.0"
+  },
+  "bugs": {
+    "url": "https://github.com/JacobHeater/WebCLI/issues"
+  },
+  "homepage": "https://github.com/JacobHeater/WebCLI#readme",
+  "dependencies": {
     "async": "^2.1.4",
     "express": "^4.14.0"
   }
